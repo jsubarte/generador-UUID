@@ -1,5 +1,5 @@
 function getUuid(){
-    fetch('http://localhost:3000/api/get-uuid')
+    fetch('https://localhost/api/get-uuid')
     .then( resp => resp.json() )
     .then(({ codigo }) => {
         const respuesta = document.getElementById("result")
