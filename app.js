@@ -4,13 +4,14 @@ import helmet from 'helmet'
 import compression from 'compression'
 import {v4 as uuidv4} from 'uuid'
 import dotenv from 'dotenv/config'
-import { resourceLimits } from 'worker_threads'
+import cors from 'cors'
 
 const app = express()
 app.use(express.static('./public'))
 
 app.use(helmet())
 app.use(compression())
+app.use(cors())
 
 const serverHttp = http.createServer(app)
 serverHttp.listen(process.env.HTTP_PORT, process.env.IP, () => { console.log(`Servidor Online y escuchando en puerto ${process.env.HTTP_PORT}`)})
